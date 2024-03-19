@@ -1,0 +1,1 @@
+{"name":"Local: Max_sum_subrray","url":"/Users/samssjubair/Documents/problem_solve/xpsc/week1/day-4/Max_sum_subrray.cpp","tests":[{"id":1710789133679,"input":"4 2\n100 200 300 400","output":"700"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/samssjubair/Documents/problem_solve/xpsc/week1/day-4/Max_sum_subrray.cpp","group":"local","local":true}
