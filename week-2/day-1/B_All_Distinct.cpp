@@ -21,9 +21,12 @@ int main()
             cin>>val;
             s.insert(val);
         }
-        cout<<s.size()<<endl;
+        int noOfDistinct = s.size();
 
-
+        if ((n - noOfDistinct)%2==1){
+            noOfDistinct--;
+        }
+        cout<<noOfDistinct<<endl;
     }
     return 0;
 }
