@@ -17,7 +17,7 @@ int main()
         string res="";
         for(int i=0;i<s.size();i++){
             // cout<<char(97+s[i]-'0'-1);
-            if(i+2>n && s[i+2]=='0' && (i+3>=n || s[i+3]!='0')){
+            if(i+2<n && s[i+2]=='0' && (i+3>=n || s[i+3]!='0')){
                 int n = ((s[i] - '0') * 10) + ((s[i+1] - '0'));
                 res.push_back(char(96+n));
                 i+=2;
