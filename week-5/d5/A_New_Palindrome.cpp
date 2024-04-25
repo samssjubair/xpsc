@@ -15,10 +15,10 @@ int main()
         string s;
         cin>>s;
         map<char,int> mp;
-        for(int i=0;i<s.size();i++){
+        for(int i=0;i<s.size()/2;i++){
             mp[s[i]]++;
         }
-        cout<<(mp.size()>3 ? "YES": "NO")<<endl;
+        cout<<(mp.size()>1 ? "YES": "NO")<<endl;
     }
     return 0;
 }
