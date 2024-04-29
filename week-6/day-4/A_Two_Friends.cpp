@@ -27,31 +27,24 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n, k;
-        cin >> n >> k;
-        vector<ll> a(k);
-        for (int i = 0; i < k; i++)
-        {
-            cin >> a[i];
+    int t;cin>>t;
+    while(t--){
+        ll n;cin>>n;
+        ll a[n + 2];
+        for(int i=1;i<=n;i++){
+            cin>>a[i];
         }
-        sort(a.begin(), a.end());
 
-        int ans = 0;
-        int t = 0;
-        for (int i = k - 1; i >= 0; i--)
+        int ans = n;
+        for (int i = 1; i <= n; i++)
         {
-            if (t >= a[i])
-            {
-                break;
-            }
-            t += (n - a[i]);
-            ans++;
+            set<int> st;
+            st.insert(i);
+            st.insert(a[i]);
+            st.insert(a[a[i]]);
+            ans= min(ans, int(st.size()));
         }
-        cout << ans << endl;
+        cout<<ans<<endl;
     }
     return 0;
 }

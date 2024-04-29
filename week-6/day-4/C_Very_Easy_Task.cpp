@@ -27,31 +27,28 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n, k;
-        cin >> n >> k;
-        vector<ll> a(k);
-        for (int i = 0; i < k; i++)
-        {
-            cin >> a[i];
-        }
-        sort(a.begin(), a.end());
+    ll n,x,y;
+    cin>>n>>x>>y;
+    ll l=0,r=max(x,y)*n,mid,ans;
 
-        int ans = 0;
-        int t = 0;
-        for (int i = k - 1; i >= 0; i--)
-        {
-            if (t >= a[i])
-            {
-                break;
-            }
-            t += (n - a[i]);
-            ans++;
+    auto ok=[&](ll mid){
+        mid-=min(x,y);
+        ll c=1;
+        c+=(mid/x+mid/y);
+        return c>=n; 
+    };
+
+    while(l<=r){
+        mid=l+(r-l)/2;
+        if(ok(mid)){
+            ans=mid;
+            r=mid-1;
+        }else{
+            l=mid+1;
         }
-        cout << ans << endl;
     }
+
+    cout<<ans<<endl;
+    
     return 0;
 }
