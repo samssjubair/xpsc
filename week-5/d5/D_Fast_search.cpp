@@ -28,8 +28,6 @@ int main()
     vector<ll> a(n);
     for(int i=0;i<n;i++){
         cin>>a[i];
-        // ll x;cin>>x;
-        // a.push_back(x);
     }
     sort(a.begin(),a.end());
     int q;

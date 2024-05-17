@@ -36,14 +36,9 @@ int main()
 
         bool flag=true;
 
-        ll rem=a[0]-b[0];
-        for (int i = 0; i < n; i++)
-        {
-            if(b[i]!=0){
-               rem = a[0] - b[0];
-               break;
-            }
-        }
+        ll rem=-1;
+        ll zeroRem=-1;
+        
         // cout<<rem<<endl;
         for(int i=0;i<n;i++){
 
@@ -52,17 +47,37 @@ int main()
                 break;
             }
 
-            if(a[i]-b[i]<rem){
-                continue;
-            }
-
-            if(a[i]-b[i]!=rem){
-                flag=false;
-                break;
-            }
-            
+            if(b[i]!=0){
+                if(rem==-1){
+                    rem=a[i]-b[i];
+                }else{
+                    if(a[i]-b[i]!=rem){
+                        flag=false;
+                        break;
+                    }
+                }
+            }else{
+                zeroRem = max(zeroRem, a[i] - b[i]);
+                // if(rem<a[i]-b[i]){
+                //     flag=false;
+                //     break;
+                // }
+            }  
         }
-        cout<<(flag?"YES":"NO")<<endl;
+        // if(rem==-1){
+        //     cout<<"YES"<<endl;
+        //     continue;
+        // }
+
+        if(!flag){
+            cout<<"NO"<<endl;
+            continue;
+        }
+
+        cout << ((rem == -1|| zeroRem <= rem) ? "YES" : "NO") << endl;
+        // else{
+        //     cout<<"YES"<<endl;
+        // }
 
     }
     return 0;

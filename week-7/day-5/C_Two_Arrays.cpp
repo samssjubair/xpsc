@@ -34,24 +34,21 @@ int main()
         for(int i=0;i<n;i++){
             cin>>a[i];
         }
-        map<int,int> mp;
         for(int i=0;i<n;i++){
-            // cin>>b[i];
             int temp;
             cin>>temp;
             b[i]=temp;
-            mp[temp]++;
         }
-        int cnt=0;
+        sort(a,a+n);
+        sort(b,b+n);
+        int c=0;
         for(int i=0;i<n;i++){
-            if(mp[a[i]] || mp[a[i]+1]){
-                if(mp[a[i]]){
-                    cnt++;
-                }
-                
-                mp[a[i]]--;
+            if((a[i]==b[i]) || (a[i]+1==b[i]) ){
+                c++;
             }
-        }
+        }   
+        cout<< (c==n ? "YES": "NO")<<endl;
+         
     }
     return 0;
 }
