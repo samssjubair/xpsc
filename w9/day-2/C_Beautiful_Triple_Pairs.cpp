@@ -54,45 +54,24 @@ int main()
         // }
 
         // cout<<mp.size() <<endl;
-        // int bp=0;
-        // for(int i=0;i<n-3;i++){
-        //     int c=0;
-        //     if(a[i]!=a[i+1]){
-        //         c++;
-        //     }
-        //     if(a[i+1]!=a[i+2]){
-        //         c++;
-        //     }
-        //     if(a[i+2]!=a[i+3]){
-        //         c++;
-        //     }
+        int bp=0;
+        for(int i=0;i<n-3;i++){
+            int c=0;
+            if(a[i]!=a[i+1]){
+                c++;
+            }
+            if(a[i+1]!=a[i+2]){
+                c++;
+            }
+            if(a[i+2]!=a[i+3]){
+                c++;
+            }
 
-        //     if(c==1){
-        //         bp++;
-        //     }
-        // }
-        // cout<<bp<<endl;
-        
-        map<pair<int, int>, int> ab, bc, acc;
-        map<tuple<int, int, int>, int> ab3, bc3, ac3;
-        int ans = 0;
-        for (int i = 0; i < n - 2; i++)
-        {
-            int a = a[i];
-            int b = a[i + 1];
-            int c = a[i + 2];
-            ab[{a, b}]++;
-            bc[{b, c}]++;
-            acc[{a, c}]++;
-            tuple<int, int, int> triple = make_tuple(a, b, c);
-            ab3[triple]++;
-            bc3[triple]++;
-            ac3[triple]++;
-            ans += ab[{a, b}] - ab3[triple];
-            ans += bc[{b, c}] - bc3[triple];
-            ans += acc[{a, c}] - ac3[triple];
+            if(c==1){
+                bp++;
+            }
         }
-        cout << ans << '\n';
+        cout<<bp<<endl;
     }
     return 0;
 }
